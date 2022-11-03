@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hoisting</title>
+  </head>
+  <body>
+    <script>
+      var a = true;
+      function change() {
+        if (!a) {
+          // a == false
+          var a = 2; // a
+        }
+        alert(a);
+      }
+
+      var a = true; // a = true.
+      function change() {
+        var a; // a is undefined
+        if (!a) {
+          // undefined => false
+          a = 2;
+        }
+        alert(a);
+      }
+    </script>
+  </body>
+</html>

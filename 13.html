@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>More On Prototypes</title>
+  </head>
+  <body>
+    <script>
+      function AreaofSquare(x) {
+        this.side = x;
+        this.area = function () {
+          return this.side * this.side;
+        };
+      }
+
+      function AreaOfRectangle(x, y) {
+        this.side1 = x;
+        this.side2 = y;
+        this.area = function () {
+          return this.side * this.side2;
+        };
+      }
+
+      var square = new AreaofSquare(10); // [[Prototype]]
+
+      console.log(square.abc());
+    </script>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hoisting of functions</title>
+  </head>
+  <body>
+    <script>
+      function foo() {
+        oo(); // undefined
+        bar(); // called up
+        return false;
+
+        function bar() {
+          alert('Hey! Will I be alerted?');
+        }
+      }
+
+      function foo() {
+        function bar() {
+          alert('Hey! Will I be alerted?');
+        }
+      }
+    </script>
+  </body>
+</html>

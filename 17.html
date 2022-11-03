@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Creating Our String Method</title>
+  </head>
+  <body>
+    <script>
+      String.prototype.revMe = function () {
+        var len = this.length; // 10 [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+        var userString = '';
+        var customString = '';
+
+        for (i = 0; i < len; i++) {
+          userString += this[i];
+        }
+
+        while (len--) {
+          // 9
+          customString += userString[len];
+        }
+
+        return customString;
+      };
+
+      var b = 'I loveto code javaScript. I love prototypes!';
+
+      console.log(b.revMe() == b.split('').reverse().join(''));
+      console.log(b.split(' ').reverse().join(' '));
+    </script>
+  </body>
+</html>
